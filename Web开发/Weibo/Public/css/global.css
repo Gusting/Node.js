@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+    font-family: "微软雅黑";
+}
+
+input[name=action] {
+    display: none;
+}
+
+input, textarea {
+    outline: none;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "latest",
+    "express": "latest",
+    "mysql": "latest",
+    "express-session": "latest",
+    "cookie-parser": "latest",
+    "ejs": "latest",
+    "multiparty": "latest"
+  }
+}
