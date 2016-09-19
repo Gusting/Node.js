@@ -1,0 +1,445 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="#" type="image/png">
+
+  <title>上传菜谱</title>
+
+  <link href="css/style-business.css" rel="stylesheet">
+  <link href="css/css_business/upload/jquery.stepy.css" rel="stylesheet">
+  <link href="css/style-responsive.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/css_business/upload/bootstrap-fileupload.min.css" />
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+            <a href="/restaurant/main"><img src="images/business/logo.png" alt=""></a>
+        </div>
+        <!--logo and iconic logo end-->
+
+        <div class="left-side-inner">
+            <!--sidebar nav start-->
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li class="active"><a href="/restaurant/main"><img src="images/icon/home.jpg" alt="" /> <span>主页</span></a></li>
+                <li class="menu-list"><a href=""><img src="images/icon/shangjia.jpg" alt="" /> <span>商家信息</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="/restaurant/detail">查看详情</a></li>
+                        <li><a href="/restaurant/modify">管理信息</a></li>
+                    </ul>
+                </li>
+                <li class="menu-list"><a href=""><img src="images/icon/recipe.jpg" alt="" /><span>菜谱信息</span></a>
+                    <ul class="sub-menu-list">
+                        <!--<li><a href="/restaurant/recipeDisplay">菜品展示</a></li>-->
+                        <li><a href="/restaurant/recipeList">菜谱列表</a></li>
+                        <li><a href="/restaurant/upload">上传菜品</a></li>
+                    </ul>
+                </li>
+                <li class="active"><a href="/restaurant/comment"><img src="images/icon/comment.jpg" alt="" /> <span>评论</span></a></li>
+                <li><a href="/restaurant/logout"><img src="images/icon/signout.jpg" alt="" /> <span>Sign Out</span></a></li>
+            </ul>
+            <!--sidebar nav end-->
+        </div>
+    </div>
+    <!-- left side end-->
+
+    <!-- main content start-->
+    <div class="main-content" >
+
+        <!-- header section start-->
+        <div class="header-section">
+
+            <!--toggle button start-->
+            <a class="toggle-btn"><img src="images/icon/switch.jpg" alt="" /></a>
+            <!--toggle button end-->
+
+            <!--search start-->
+            <form class="searchform" action="" method="post">
+                <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
+            </form>
+            <!--search end-->
+
+            <!--notification menu start -->
+            <div class="menu-right">
+                <ul class="notification-menu">
+                    <li>
+                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <img src="images/clients/avatar-5.jpg" alt="" />
+                            迹部景吾
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                            <li><a href="/restaurant/detail"><img src="images/icon/me.jpg" alt="" />查看个人信息</a></li>
+                            <li><a href="/restaurant/modify"><img src="images/icon/settings.jpg" alt="" />个人信息管理</a></li>
+                            <li><a href="/restaurant/logout"><img src="images/icon/signoutme.jpg" alt="" />Log Out</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <!--notification menu end -->
+
+        </div>
+        <!-- header section end-->
+
+        <!-- page heading start-->
+        <div class="page-heading">
+            <h3>
+                上传菜谱
+            </h3>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="#">菜谱管理</a>
+                </li>
+                <li class="active">上传菜谱</li>
+            </ul>
+        </div>
+        <!-- page heading end-->
+        <hr/>
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="square-widget">
+                        <div class="widget-container">
+                            <div class="stepy-tab"></div>
+                                <div id="default" class="form-horizontal">
+                            <!--<form id="default" class="form-horizontal" role="form" enctype="multipart/form-data" >-->
+                                <fieldset title="Step 1">
+                                            <legend>基本信息</legend>
+                                            <div class="form-group">
+                                                <label class="col-md-2 col-sm-2 control-label">菜品名称</label>
+                                                <div class="col-md-6 col-sm-6">
+                                                    <input class="form-control" id = "recipe_name" name="name" type="text"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-2 col-sm-2 control-label">菜品简介</label>
+                                                <div class="col-md-6 col-sm-6">
+													<textarea rows="5" cols="60" class="form-control" id="introduction"></textarea>
+												</div>
+                                            </div>
+                                </fieldset>
+                                <fieldset title="Step 2">
+                                            <legend>菜品原料</legend>
+                                            <div class="form-group">
+                                                <label class="col-md-2 col-sm-2 control-label">菜品主料</label>
+                                                <div class="col-md-6 col-sm-6">
+                                                    <input type="text" placeholder="" class="form-control" id="major_material" name="major_material">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-2 col-sm-2 control-label">菜品辅料</label>
+                                                <div class="col-md-6 col-sm-6">
+                                                    <input type="text" placeholder="" class="form-control" name="minor_material" id="minor_material">
+                                                </div>
+                                            </div>
+                                </fieldset>
+                                <fieldset title="Step 3">
+                                            <legend>烹饪过程</legend>
+                                            <div class="form-group">
+                                                <label class="col-md-2 col-sm-2 control-label">菜品工艺</label>
+                                                <div class="col-md-6 col-sm-6">
+                                                    <input type="text" placeholder="" class="form-control" id="cook_method" name="cook_method">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-2 col-sm-2 control-label">烹饪时间</label>
+                                                <div class="col-md-6 col-sm-6">
+                                                    <input type="text" placeholder="" class="form-control" id="cook_time" name="cook_time">
+                                                </div>
+                                            </div>
+											<div class="form-group">
+                                                <label class="col-md-2 col-sm-2 control-label">烹饪流程</label>
+                                                <div class="col-md-6 col-sm-6">
+													<textarea rows="5" cols="60" class="form-control" id="procedure" name="procedure"></textarea>
+												</div>
+                                            </div>
+											<div class="form-group">
+                                                <label class="col-md-2 col-sm-2 control-label">小贴士</label>
+                                                <div class="col-md-6 col-sm-6">
+													<textarea rows="5" cols="60" class="form-control" id="tips" name="tips"></textarea>
+												</div>
+                                            </div>
+                                </fieldset>
+								<fieldset title="Step 4">
+                                            <legend>具体信息</legend>
+                                            <div class="form-group">
+                                                <label class="col-md-2 col-sm-2 control-label">菜品口味</label>
+                                                <div class="col-md-6 col-sm-6">
+                                                    <input type="text" placeholder="" class="form-control" id="flavour" name="flavour">
+                                                </div>
+                                            </div>
+											<div class="form-group">
+                                                <label class="col-md-2 col-sm-2 control-label">忌口</label>
+                                                <div class="col-md-6 col-sm-6">
+                                                    <input type="text" placeholder="" class="form-control" id="avoid" name="avoid">
+                                                </div>
+                                            </div>
+											<div class="form-group">
+                                                <label class="col-md-2 col-sm-2 control-label">菜品价格</label>
+                                                <div class="col-md-6 col-sm-6">
+                                                    <input type="text" placeholder="" class="form-control" id="price" name="price">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-2 col-sm-2 control-label">是否推荐</label>
+                                                <div class="col-md-6 col-sm-6">
+                                                    <label class="checkbox">
+                                                        <input type="checkbox" value="" id="recommendation" name="recommendation">要推荐此菜品</label>
+                                                </div>
+                                            </div>
+                                </fieldset>
+								<fieldset title="Step 5">
+                                            <legend>上传图片</legend>
+                                            <!--<div class="form-group">-->
+                                                <!--<label class="col-md-2 col-sm-2 control-label">上传图片</label>-->
+                                                <!--<div class="col-md-6 col-sm-6">-->
+                                                    <!--<div class="form-group last">-->
+														<!--<div class="col-md-9">-->
+															<!--<div class="fileupload fileupload-new" data-provides="fileupload">-->
+																<!--<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">-->
+																	<!--<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />-->
+																<!--</div>-->
+																<!--<div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>-->
+																<!--<div>-->
+																	   <!--&lt;!&ndash;<span class="btn btn-default btn-file">&ndash;&gt;-->
+																	   <!--&lt;!&ndash;<span class="fileupload-new"><i class="fa fa-paper-clip"></i>选择图片</span>&ndash;&gt;-->
+																	   <!--&lt;!&ndash;<span class="fileupload-exists"><i class="fa fa-undo"></i>改变图片</span>&ndash;&gt;-->
+																	   <!--&lt;!&ndash;<input type="file" class="default" id="pic2"/>&ndash;&gt;-->
+																	   <!--&lt;!&ndash;</span>&ndash;&gt;-->
+																	<!--&lt;!&ndash;<a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i>移除</a>&ndash;&gt;-->
+                                                                    <!--<input type="file" name="pic1" id="pic1">-->
+																<!--</div>-->
+															<!--</div>-->
+															<!--<br/>-->
+														<!--</div>-->
+													<!--</div>-->
+													<!--<div class="form-group last">-->
+
+														<!--<div class="col-md-9">-->
+															<!--<div class="fileupload fileupload-new" data-provides="fileupload">-->
+																<!--<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">-->
+																	<!--<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />-->
+																<!--</div>-->
+																<!--<div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>-->
+																<!--<div>-->
+																	   <!--&lt;!&ndash;<span class="btn btn-default btn-file">&ndash;&gt;-->
+																	   <!--&lt;!&ndash;<span class="fileupload-new"><i class="fa fa-paper-clip"></i>选择图片</span>&ndash;&gt;-->
+																	   <!--&lt;!&ndash;<span class="fileupload-exists"><i class="fa fa-undo"></i>改变图片</span>&ndash;&gt;-->
+																	   <!--&lt;!&ndash;<input type="file" class="default" id="pic1"/>&ndash;&gt;-->
+																	   <!--&lt;!&ndash;</span>&ndash;&gt;-->
+																	<!--&lt;!&ndash;<a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i>移除</a>&ndash;&gt;-->
+                                                                    <!--<input type="file" name="pic2" id="pic2">-->
+																<!--</div>-->
+															<!--</div>-->
+															<!--<br/>-->
+															<!--<span class="label label-danger ">NOTE!</span>-->
+																 <!--<span>-->
+																 <!--附加的图像缩略图只支持Firefox, Chrome, Opera, Safari和IE 10。-->
+																 <!--</span>-->
+														<!--</div>-->
+													<!--</div>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                    <form class="form-signin" role="form" method="post" action="upload" enctype='multipart/form-data'>
+                                        <h2 class="form-signin-heading">上传文件</h2>
+                                        <input id="fulAvatar" name="fulAvatar" type="file" class="form-control" />
+                                        <br/>
+                                        <button id="btnSub" class="btn btn-lg btn-primary" type="submit">上 传</button>
+                                    </form>
+                                </fieldset>
+
+                                <button class="btn btn-info finish" id="submit_btn">Finish </button>
+							<!--</form>-->
+                                </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!--body wrapper end-->
+	<!--footer section start-->
+
+	<footer class="sticky-footer">
+		&copy; Summer Cooperation 2016
+	</footer>
+	<!--footer section end-->
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/js_business/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="js/js_business/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/js_business/upload/jquery.validate.min.js"></script>
+<script src="js/js_business/upload/jquery.stepy.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/js_business/modernizr.min.js"></script>
+<script src="js/js_business/jquery.nicescroll.js"></script>
+<script type="text/javascript" src="js/js_business/upload/bootstrap-fileupload.min.js"></script>
+
+<!--common scripts for all pages-->
+<script src="js/js_business/scripts.js"></script>
+
+<script>
+    /*=====STEPY WIZARD====*/
+    $(function() {
+        $('#default').stepy({
+            backLabel: 'Previous',
+            block: true,
+            nextLabel: 'Next',
+            titleClick: true,
+            titleTarget: '.stepy-tab'
+        });
+    });
+    /*=====STEPY WIZARD WITH VALIDATION====*/
+    $(function() {
+        $('#stepy_form').stepy({
+            backLabel: 'Back',
+            nextLabel: 'Next',
+            errorImage: true,
+            block: true,
+            description: true,
+            legend: false,
+            titleClick: true,
+            titleTarget: '#top_tabby',
+            validate: true
+        });
+        $('#stepy_form').validate({
+            errorPlacement: function(error, element) {
+                $('#stepy_form div.stepy-error').append(error);
+            },
+            rules: {
+                'name': 'required',
+                'email': 'required'
+            },
+            messages: {
+                'name': {
+                    required: 'Name field is required!'
+                },
+                'email': {
+                    required: 'Email field is requerid!'
+                }
+            }
+        });
+    });
+
+    $("#submit_btn").click(function() {
+//        alert('!!!!!');
+
+        var name = $("#recipe_name").val();
+        var introduction = $("#introduction").val();
+
+        var major = $("#major_material").val();
+        var minor = $("#minor_material").val();
+
+        var method = $("#cook_method").val();
+        var time = $("#cook_time").val();
+        var procedure = $("#procedure").val();
+        var tip = $("#tips").val();
+
+        var flavour = $("#flavour").val();
+        var avoid = $("#avoid").val();
+        var price = $("#price").val();
+
+        var img1 = $("#pic1").val();
+        var img2 = $("#pic2").val();
+
+
+        var isRecommended;
+        if ($("#recommendation").is(":checked"))
+                isRecommended = 1;
+        else
+                isRecommended = 0;
+
+
+//        var formData = new FormData();
+//        formData.append('name', name);
+//        formData.append('introduction', introduction);
+//        formData.append('major', major);
+//        formData.append('minor', minor);
+//        formData.append('method', method);
+//        formData.append('time', time);
+//        formData.append('procedure', procedure);
+//        formData.append('tip', tip);
+//        formData.append('flavour', flavour);
+//        formData.append('avoid', avoid);
+//        formData.append('price', price);
+//
+//
+//        var extName = img1.substring(img1.lastIndexOf('.'),img1.length).toLowerCase();
+//        if(img1.length != 0 && (extName == '.png' || extName == '.jpg'))
+//                formData.append('img1', $('#pic1')[0].files[0]);
+//
+//        // formData.append('img2', $('#pic2')[0].files[0]);
+//
+//
+//        $.ajax({
+//            url: 'upload',
+//            type: 'post',
+//            data: new FormData($('#default')),
+//            dataType: 'json',
+//            processData: false,   // 告诉jQuery不要去处理发送的数据
+//            contentType: false,   // 告诉jQuery不要去设置Content-Type请求头
+//            success: function(data){
+//                console.log('upload successful!');
+//            }
+//        });
+
+
+
+
+        $.ajax({
+            url: 'upload',
+            data: JSON.stringify( {
+                name : name,
+                introduction : introduction,
+                major : major,
+                minor : minor,
+                method : method,
+                time : time,
+                procedure : procedure,
+                tip : tip,
+                flavour : flavour,
+                avoid : avoid,
+                price : price,
+                isRecommended : isRecommended,
+                img1 : img1,
+                img2 : img2
+            }),
+            type: "post",
+            contentType: "application/json",
+            cache: false,
+            success: function (data) {
+                alert(data);
+                window.location.reload();  // 刷新页面
+            },
+            error: function (data) {
+                alert(data);
+            }
+        });
+
+
+
+    });
+</script>
+
+</body>
+</html>

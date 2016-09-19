@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>菜品展示</title>
+
+    <link href="css/style-business.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+            <a href="/restaurant/main"><img src="images/business/logo.png" alt=""></a>
+        </div>
+        <!--logo and iconic logo end-->
+
+        <div class="left-side-inner">
+            <!--sidebar nav start-->
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li class="active"><a href="/restaurant/main"><img src="images/icon/home.jpg" alt="" /> <span>主页</span></a></li>
+                <li class="menu-list"><a href=""><img src="images/icon/shangjia.jpg" alt="" /> <span>商家信息</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="/restaurant/detail">查看详情</a></li>
+                        <li><a href="/restaurant/modify">管理信息</a></li>
+                    </ul>
+                </li>
+                <li class="menu-list"><a href=""><img src="images/icon/recipe.jpg" alt="" /><span>菜谱信息</span></a>
+                    <ul class="sub-menu-list">
+                        <!--<li><a href="/restaurant/recipeDisplay">菜品展示</a></li>-->
+                        <li><a href="/restaurant/recipeList">菜谱列表</a></li>
+                        <li><a href="/restaurant/upload">上传菜品</a></li>
+                    </ul>
+                </li>
+                <li class="active"><a href="/restaurant/comment"><img src="images/icon/comment.jpg" alt="" /> <span>评论</span></a></li>
+                <li><a href="/restaurant/logout"><img src="images/icon/signout.jpg" alt="" /> <span>Sign Out</span></a></li>
+            </ul>
+            <!--sidebar nav end-->
+        </div>
+    </div>
+    <!-- left side end-->
+
+    <!-- main content start-->
+    <div class="main-content" >
+
+        <!-- header section start-->
+        <div class="header-section">
+
+            <!--toggle button start-->
+            <a class="toggle-btn"><img src="images/icon/switch.jpg" alt="" /></a>
+            <!--toggle button end-->
+
+            <!--search start-->
+            <form class="searchform" action="" method="post">
+                <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
+            </form>
+            <!--search end-->
+
+            <!--notification menu start -->
+            <div class="menu-right">
+                <ul class="notification-menu">
+                    <li>
+                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <img src="images/clients/avatar-5.jpg" alt="" />
+                            迹部景吾
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                            <li><a href="/restaurant/detail"><img src="images/icon/me.jpg" alt="" />查看个人信息</a></li>
+                            <li><a href="/restaurant/modify"><img src="images/icon/settings.jpg" alt="" />个人信息管理</a></li>
+                            <li><a href="/restaurant/logout"><img src="images/icon/signoutme.jpg" alt="" />Log Out</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <!--notification menu end -->
+
+        </div>
+        <!-- header section end-->
+
+        <!-- page heading start-->
+        <div class="page-heading">
+            <h3>
+                菜品
+            </h3>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li class="active"><a href="business_recipedisplay.html">菜品展示</a></li>
+                <li class="active"><a href="business_recipelist.html">菜品列表</a></li>
+            </ul>
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            菜品展示
+                        </header>
+                        <div class="panel-body">
+                            <ul id="filters" class="media-filter">
+                                <span class="label label-info">甜点饮品</span>
+                                <span class="label label-warning">甜点饮品</span>
+                                <span class="label label-danger">甜点饮品</span>
+                            </ul>
+                            <div class="media-filter pull-right">
+                                <span class="label label-default">小吃快餐</span>
+                                <span class="label label-primary">甜点饮品</span>
+                                <span class="label label-success">甜点饮品</span>
+                            </div>
+                            <div id="gallery" class="media-gal">
+                                <div class="images item " >
+                                    <a href="#myModal" data-toggle="modal">
+                                        <img src="images/tangculiji.jpg" alt="" />
+                                    </a>
+                                    <p>糖醋里脊</p>
+                                </div>
+
+                                <div class=" audio item " >
+                                    <a href="#myModal" data-toggle="modal">
+                                        <img src="images/tangculiji2.jpg" alt="" />
+                                    </a>
+                                    <p>糖醋里脊</p>
+                                </div>
+
+                                <div class=" video item " >
+                                    <a href="#myModal" data-toggle="modal">
+                                        <img src="images/pisa1.jpg" alt="" />
+                                    </a>
+                                    <p>什锦培根披萨</p>
+                                </div>
+
+                                <div class=" images audio item " >
+                                    <a href="#myModal" data-toggle="modal">
+                                        <img src="images/pisa2.jpg" alt="" />
+                                    </a>
+                                    <p>什锦培根披萨</p>
+                                </div>
+
+                                <div class=" images documents item " >
+                                    <a href="#myModal" data-toggle="modal">
+                                        <img src="images/tangculiji.jpg" alt="" />
+                                    </a>
+                                    <p>糖醋里脊</p>
+                                </div>
+
+                                <div class=" audio item " >
+                                    <a href="#myModal" data-toggle="modal">
+                                        <img src="images/portfolio/portfolio-thumb-1.jpg" alt="" />
+                                    </a>
+                                    <p>糖醋里脊</p>
+                                </div>
+
+                                <div class=" documents item " >
+                                    <a href="#myModal" data-toggle="modal">
+                                        <img src="images/portfolio/portfolio-thumb-1.jpg" alt="" />
+                                    </a>
+                                    <p>糖醋里脊</p>
+                                </div>
+                                <div class=" video item " >
+                                    <a href="#myModal" data-toggle="modal">
+                                        <img src="images/portfolio/portfolio-thumb-2.jpg" alt="" />
+                                    </a>
+                                    <p>糖醋里脊</p>
+                                </div>
+
+                                <div class=" images item " >
+                                    <a href="#myModal" data-toggle="modal">
+                                        <img src="images/portfolio/portfolio-thumb-3.jpg" alt="" />
+                                    </a>
+                                    <p>糖醋里脊</p>
+                                </div>
+
+                                <div class=" documents item " >
+                                    <a href="#myModal" data-toggle="modal">
+                                        <img src="images/portfolio/portfolio-thumb-4.jpg" alt="" />
+                                    </a>
+                                    <p>糖醋里脊</p>
+                                </div>
+
+                                <div class=" video item " >
+                                    <a href="#myModal" data-toggle="modal">
+                                        <img src="images/portfolio/portfolio-thumb-5.jpg" alt="" />
+                                    </a>
+                                    <p>糖醋里脊</p>
+                                </div>
+
+                                <div class=" audio images item " >
+                                    <a href="#myModal" data-toggle="modal">
+                                        <img src="images/portfolio/portfolio-thumb-6.jpg" alt="" />
+                                    </a>
+                                    <p>糖醋里脊</p>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-12 text-center clearfix">
+                                <ul class="pagination">
+                                    <li><a href="#">«</a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">»</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title">查看菜品</h4>
+                                        </div>
+
+                                        <div class="modal-body row">
+
+                                            <div class="col-md-5 img-modal">
+                                                <img src="images/business/gallery/image1.jpg" alt="">
+                                                <p class="mtop10"><strong>菜品名称：</strong><input id="name" value="糖醋里脊" class="form-control"></p>
+                                                <p><strong>菜品价格：</strong>￥69</p>
+                                                <p><strong>菜品口味：</strong>酸甜味</p>
+                                                <p><strong>菜品忌口：</strong>暂无</p>
+                                                <p><strong>推荐菜：</strong> <a href="#">是</a></p>
+                                                <p><strong>烹饪主料：</strong>猪里脊肉</p>
+                                                <p><strong>烹饪辅料：</strong>番茄酱、淀粉、醋、糖、白芝麻、食盐、胡椒粉、姜、鸡蛋清、花生油、水淀粉</p>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div class="form-group">
+                                                    <label>菜品简介</label>
+                                                    <textarea rows="2" class="form-control">这道菜貌似没有人不喜欢！里脊肉很嫩，裹淀粉炸后，再放糖醋汁里一拌，吃起来外酥里嫩、酸酸甜甜，深受大小朋友的亲睐！</textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>烹饪工艺</label>
+                                                    <input id="name" value="炸" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>烹饪时间</label>
+                                                    <input id="name" value="<15分钟" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>烹饪流程</label>
+                                                    <textarea rows="2" class="form-control">1.里脊肉切丝；2.放盐、胡椒粉、姜丝、蛋清腌15分钟；3.夹去姜丝，放在大盘里，边撒淀粉边抓匀，直到所有的肉丝都沾上淀粉,相互不粘连；4.抖去多余的淀粉，放油锅炸至表面微黄；5.沥出，再复炸一遍；6.锅里留少量底油，倒入蕃茄酱，加少量糖和醋炒出小泡，倒入小半碗水淀粉，熬至汤汁浓稠；7.倒入炸好的里脊肉翻拌均匀，撒上熟的白芝麻装盘。 </textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>小贴士</label>
+                                                    <textarea rows="2" class="form-control">1.腌制过程中加入家乐鸡粉，还可以去除肉的腥；2.里脊肉买回后放冰箱冻一会后更好切。</textarea>
+                                                </div>
+                                                <div class="pull-right">
+                                                    <button class="btn btn-danger btn-sm" type="button">取消</button>
+                                                    <button class="btn btn-success btn-sm" type="button">保存</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- modal -->
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!--body wrapper end-->
+
+        <!--footer section start-->
+        <footer>
+            &copy; Summer Cooperation 2016
+        </footer>
+        <!--footer section end-->
+
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/js_business/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="js/js_business/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/js_business/modernizr.min.js"></script>
+<script src="js/js_business/jquery.nicescroll.js"></script>
+
+<script src="js/js_business/jquery.isotope.js"></script>
+
+<!--common scripts for all pages-->
+<script src="js/js_business/scripts.js"></script>
+
+<script type="text/javascript">
+    $(function() {
+        var $container = $('#gallery');
+        $container.isotope({
+            itemSelector: '.item',
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+        });
+
+        // filter items when filter link is clicked
+        $('#filters a').click(function() {
+            var selector = $(this).attr('data-filter');
+            $container.isotope({filter: selector});
+            return false;
+        });
+    });
+</script>
+
+</body>
+</html>

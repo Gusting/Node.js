@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>商家详情</title>
+
+    <link href="css/style-business.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+            <a href="/restaurant/main"><img src="images/business/logo.png" alt=""></a>
+        </div>
+        <!--logo and iconic logo end-->
+
+        <div class="left-side-inner">
+            <!--sidebar nav start-->
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li class="active"><a href="/restaurant/main"><img src="images/icon/home.jpg" alt="" /> <span>主页</span></a></li>
+                <li class="menu-list"><a href=""><img src="images/icon/shangjia.jpg" alt="" /> <span>商家信息</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="/restaurant/detail">查看详情</a></li>
+                        <li><a href="/restaurant/modify">管理信息</a></li>
+                    </ul>
+                </li>
+                <li class="menu-list"><a href=""><img src="images/icon/recipe.jpg" alt="" /><span>菜谱信息</span></a>
+                    <ul class="sub-menu-list">
+                        <!--<li><a href="/restaurant/recipeDisplay">菜品展示</a></li>-->
+                        <li><a href="/restaurant/recipeList">菜谱列表</a></li>
+                        <li><a href="/restaurant/upload">上传菜品</a></li>
+                    </ul>
+                </li>
+                <li class="active"><a href="/restaurant/comment"><img src="images/icon/comment.jpg" alt="" /> <span>评论</span></a></li>
+                <li><a href="/restaurant/logout"><img src="images/icon/signout.jpg" alt="" /> <span>Sign Out</span></a></li>
+            </ul>
+            <!--sidebar nav end-->
+        </div>
+    </div>
+    <!-- left side end-->
+
+    <!-- main content start-->
+    <div class="main-content" >
+
+        <!-- header section start-->
+        <div class="header-section">
+
+            <!--toggle button start-->
+            <a class="toggle-btn"><img src="images/icon/switch.jpg" alt="" /></a>
+            <!--toggle button end-->
+
+            <!--search start-->
+            <form class="searchform" action="" method="post">
+                <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
+            </form>
+            <!--search end-->
+
+            <!--notification menu start -->
+            <div class="menu-right">
+                <ul class="notification-menu">
+                    <li>
+                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <img src="images/clients/avatar-5.jpg" alt="" />
+                            迹部景吾
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                            <li><a href="/restaurant/detail"><img src="images/icon/me.jpg" alt="" />查看个人信息</a></li>
+                            <li><a href="/restaurant/modify"><img src="images/icon/settings.jpg" alt="" />个人信息管理</a></li>
+                            <li><a href="/restaurant/logout"><img src="images/icon/signoutme.jpg" alt="" />Log Out</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <!--notification menu end -->
+
+        </div>
+        <!-- header section end-->
+
+        <!-- page heading start-->
+        <div class="page-heading">
+            <h3>
+                商家详情
+            </h3>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="#">商家详情</a>
+                </li>
+                <li class="active"><%= result[0].res_name %></li>
+            </ul>
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel">
+                                <div class="panel-body">
+                                    <div class="profile-pic text-center">
+                                        <img alt="" src="/images/cat.jpg">
+                                        <div class="title"><%= result[0].res_name %></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="panel">
+                                <div class="panel-body p-states green-box">
+                                    <h3>个人信息</h3>
+                                    <div class="summary pull-left">
+                                        <ul class="p-info">
+                                            <li>
+                                                <div class="title">用户名</div>
+                                                <div class="title"><%= username %></div>
+                                            </li>
+                                            <li>
+                                                <div class="title">法人姓名</div>
+                                                <div class="title"><%= result[0].manager_name %></div>
+                                            </li>
+                                            <li>
+                                                <div class="title">身份证号</div>
+                                                <div class="title"> <%= result[0].manager_idnum %></div>
+                                            </li>
+                                            <li>
+                                                <div class="title">联系电话</div>
+                                                <div class="title"><%= result[0].phone %></div>
+                                            </li>
+                                            <li>
+                                                <div class="title">邮箱地址</div>
+                                                <div class="title"><%= result[0].email %></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-sm-8">
+                                <h3>商家图片</h3>
+                                <div class="col-md-4 widget_1_box1">
+                                    <table width="1000" height="500" border="0">
+                                        <tr>
+                                            <td width="500"  align="left" id="recipeimg1"><img class="img-responsive" src="<%= result[0].pic %>" border="0"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">商家简介</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <%= result[0].introduction %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel">
+                                <div class="panel-body">
+                                    <h3>
+                                        商家信息
+                                    </h3>
+                                    <ul class="p-info">
+                                        <li>
+                                            <div class="title">地址</div>
+                                            <div class="desk"><%= result[0].address %></div>
+                                        </li>
+                                        <li>
+                                            <div class="title">营业时间</div>
+                                            <div class="desk"><%= result[0].business_hour %></div>
+                                        </li>
+                                        <li>
+                                            <div class="title">地域</div>
+                                            <div class="desk"><%= result[0].address %></div>
+                                        </li>
+                                        <li>
+                                            <div class="title">信用评级</div>
+											<span class="stars" id="creditrating">
+												<%= result[0].star %>
+											</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel">
+                                <div class="panel-body">
+                                    <h3>
+                                        标签
+                                    </h3>
+                                        <span class="label label-warning">甜点饮品</span>
+
+                                    <!--<span class="label label-default">小吃快餐</span>-->
+                                    <!--<span class="label label-primary">甜点饮品</span>-->
+                                    <!--<span class="label label-success">甜点饮品</span>-->
+                                    <!--<span class="label label-info">甜点饮品</span>-->
+                                    <!--<span class="label label-warning">甜点饮品</span>-->
+                                    <!--<span class="label label-danger">甜点饮品</span>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <!--body wrapper end-->
+
+    <!--footer section start-->
+    <footer class="">
+        &copy; Summer Cooperation 2016
+    </footer>
+    <!--footer section end-->
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/js_business/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="js/js_business/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/js_business/modernizr.min.js"></script>
+<script src="js/js_business/jquery.nicescroll.js"></script>
+
+<!--Sparkline Chart-->
+<script src="js/js_business/sparkline/jquery.sparkline.js"></script>
+<script src="js/js_business/sparkline/sparkline-init.js"></script>
+
+<!--google map-->
+<!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&AMP;sensor=false"></script>-->
+
+<!--common scripts for all pages-->
+<script src="js/js_business/scripts.js"></script>
+
+<script>
+
+    //google map
+//    function initialize() {
+//        var myLatlng = new google.maps.LatLng(-37.815207, 144.963937);
+//        var mapOptions = {
+//            zoom: 15,
+//            scrollwheel: false,
+//            center: myLatlng,
+//            mapTypeId: google.maps.MapTypeId.ROADMAP
+//        }
+//        var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+//        var marker = new google.maps.Marker({
+//            position: myLatlng,
+//            map: map,
+//            title: 'Hello World!'
+//        });
+//    }
+//    google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+
+</body>
+</html>

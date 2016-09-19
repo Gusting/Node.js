@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="mzge">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>食友商家</title>
+
+    <!--icheck-->
+    <link href="css/css_business/iCheck/minimal/minimal.css" rel="stylesheet">
+    <link href="css/css_business/iCheck/square/square.css" rel="stylesheet">
+    <link href="css/css_business/iCheck/square/red.css" rel="stylesheet">
+    <link href="css/css_business/iCheck/square/blue.css" rel="stylesheet">
+
+    <!--dashboard calendar-->
+    <link href="css/css_business/clndr.css" rel="stylesheet">
+
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="css/css_business/morris-chart/morris.css">
+
+    <!--common-->
+    <link href="css/style-business.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+            <a href="/restaurant/main"><img src="images/business/logo.png" alt=""></a>
+        </div>
+        <!--logo and iconic logo end-->
+
+        <div class="left-side-inner">
+            <!--sidebar nav start-->
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li class="active"><a href="/restaurant/main"><img src="images/icon/home.jpg" alt="" /> <span>主页</span></a></li>
+                <li class="menu-list"><a href=""><img src="images/icon/shangjia.jpg" alt="" /> <span>商家信息</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="/restaurant/detail">查看详情</a></li>
+                        <li><a href="/restaurant/modify">管理信息</a></li>
+                    </ul>
+                </li>
+                <li class="menu-list"><a href=""><img src="images/icon/recipe.jpg" alt="" /><span>菜谱信息</span></a>
+                    <ul class="sub-menu-list">
+                        <!--<li><a href="/restaurant/recipeDisplay">菜品展示</a></li>-->
+                        <li><a href="/restaurant/recipeList">菜谱列表</a></li>
+                        <li><a href="/restaurant/upload">上传菜品</a></li>
+                    </ul>
+                </li>
+                <li class="active"><a href="/restaurant/comment"><img src="images/icon/comment.jpg" alt="" /> <span>评论</span></a></li>
+                <li><a href="/restaurant/logout"><img src="images/icon/signout.jpg" alt="" /> <span>Sign Out</span></a></li>
+            </ul>
+            <!--sidebar nav end-->
+        </div>
+    </div>
+    <!-- left side end-->
+
+    <!-- main content start-->
+    <div class="main-content" >
+
+        <!-- header section start-->
+        <div class="header-section">
+
+            <!--toggle button start-->
+            <a class="toggle-btn"><img src="images/icon/switch.jpg" alt="" /></a>
+            <!--toggle button end-->
+
+            <!--search start-->
+            <form class="searchform" action="" method="post">
+                <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
+            </form>
+            <!--search end-->
+
+            <!--notification menu start -->
+            <div class="menu-right">
+                <ul class="notification-menu">
+                    <li>
+                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <img src="images/clients/avatar-5.jpg" alt="" />
+                            迹部景吾
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                            <li><a href="/restaurant/detail"><img src="images/icon/me.jpg" alt="" />查看个人信息</a></li>
+                            <li><a href="/restaurant/modify"><img src="images/icon/settings.jpg" alt="" />个人信息管理</a></li>
+                            <li><a href="/restaurant/logout"><img src="images/icon/signoutme.jpg" alt="" />Log Out</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <!--notification menu end -->
+
+        </div>
+        <!-- header section end-->
+
+        <!-- page heading start-->
+        <div class="page-heading">
+            <h3>
+                Home
+            </h3>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li class="active">My Home</li>
+            </ul>
+            <!--<div class="state-info">-->
+                <!--<section class="panel">-->
+                    <!--<div class="panel-body">-->
+                        <!--<div class="summary">-->
+                            <!--<span>今日主打</span>-->
+                            <!--<h3 class="red-txt"><a href="business_recipedetails.html">柠檬特饮</a></h3>-->
+                            <!--<h3 class="red-txt">¥ 45</h3>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</section>-->
+                <!--<section class="panel">-->
+                    <!--<div class="panel-body">-->
+                        <!--<div class="summary">-->
+                            <!--<span>今日主打</span>-->
+                            <!--<h3 class="green-txt"><a href="business_recipedetails.html">冰心奶绿</a></h3>-->
+                            <!--<h3 class="green-txt">¥ 60</h3>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</section>-->
+            <!--</div>-->
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-md-6">
+                    <!--statistics start-->
+                    <div class="row state-overview">
+                        <div class="col-md-6 col-xs-12 col-sm-6">
+                            <div class="panel purple">
+                                <div class="symbol">
+                                    <img src="images/icon/1.jpg" alt="" />
+                                </div>
+                                <div class="state-value">
+                                    <div class="value">今日主打</div>
+                                    <div class="title">芒果思慕雪</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xs-12 col-sm-6">
+                            <div class="panel red">
+                                <div class="symbol">
+                                    <img src="images/icon/2.jpg" alt="" />
+                                </div>
+                                <div class="state-value">
+                                    <div class="value">今日主打</div>
+                                    <div class="title">酸奶冰淇淋</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row state-overview">
+                        <div class="col-md-6 col-xs-12 col-sm-6">
+                            <div class="panel red">
+                                <div class="symbol">
+                                    <img src="images/icon/3.jpg" alt="" />
+                                </div>
+                                <div class="state-value">
+                                    <div class="value">昨日热点</div>
+                                    <div class="title">糖醋里脊</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xs-12 col-sm-6">
+                            <div class="panel purple">
+                                <div class="symbol">
+                                    <img src="images/icon/4.jpg" alt="" />
+                                </div>
+                                <div class="state-value">
+                                    <div class="value">昨日热点</div>
+                                    <div class="title">麻辣香锅</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row state-overview">
+                        <div class="col-md-6 col-xs-12 col-sm-6">
+                            <div class="panel blue">
+                                <div class="symbol">
+                                    <img src="images/icon/5.jpg" alt="" />
+                                </div>
+                                <div class="state-value">
+                                    <div class="value">菜品数量</div>
+                                    <div class="title"><%= dishList.length %></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xs-12 col-sm-6">
+                            <div class="panel green">
+                                <div class="symbol">
+                                    <img src="images/icon/6.jpg" alt="" />
+                                </div>
+                                <div class="state-value">
+                                    <div class="value">评论数量</div>
+                                    <div class="title"><%= commentList.length %></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--statistics end-->
+                </div>
+                <div class="col-md-6">
+                    <!--more statistics box start-->
+                    <div class="panel green-box">
+                        <header class="panel-heading">
+                            菜品列表
+                        </header>
+                        <div class="panel-body">
+                            <div class="row">
+                                <ul class="goal-progress">
+                                    <% if(dishList.length > 0){ %>
+                                        <% for(var i = 0, len = dishList.length; i < len && i < 3; i ++){%>
+                                            <li>
+                                                <div class="prog-avatar">
+                                                    <img src="images/bbb.jpg" alt=""/>
+                                                </div>
+                                                <div class="details">
+                                                    <div class="title"><%= dishList[i].name %></div>
+                                                    <div><p><%= dishList[i].price %></p></div>
+                                                </div>
+                                            </li>
+                                        <% } %>
+                                    <% } %>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--more statistics box end-->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="calendar-block ">
+                                <div class="cal1">
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel">
+                        <header class="panel-heading">
+                            今日日程
+                        </header>
+                        <div class="panel-body">
+                            <ul class="to-do-list" id="sortable-todo">
+                                <li class="clearfix">
+                                    <span class="drag-marker">
+                                    <i></i>
+                                    </span>
+                                    <div class="todo-check pull-left">
+                                        <input type="checkbox" value="None" id="todo-check"/>
+                                        <label for="todo-check"></label>
+                                    </div>
+                                    <p class="todo-title">
+                                        管理新用户
+                                    </p>
+                                    <div class="todo-actionlist pull-right clearfix">
+
+                                        <a href="#" class="todo-remove"><i class="fa fa-times"></i></a>
+                                    </div>
+                                </li>
+                                <li class="clearfix">
+                                    <span class="drag-marker">
+                                    <i></i>
+                                    </span>
+                                    <div class="todo-check pull-left">
+                                        <input type="checkbox" value="None" id="todo-check1"/>
+                                        <label for="todo-check1"></label>
+                                    </div>
+                                    <p class="todo-title">
+                                        管理新订单
+                                    </p>
+                                    <div class="todo-actionlist pull-right clearfix">
+
+                                        <a href="#" class="todo-remove"><i class="fa fa-times"></i></a>
+                                    </div>
+                                </li>
+                                <li class="clearfix">
+                                    <span class="drag-marker">
+                                    <i></i>
+                                    </span>
+                                    <div class="todo-check pull-left">
+                                        <input type="checkbox" value="None" id="todo-check2"/>
+                                        <label for="todo-check2"></label>
+                                    </div>
+                                    <p class="todo-title">
+                                        修改菜谱
+                                    </p>
+                                    <div class="todo-actionlist pull-right clearfix">
+
+                                        <a href="#" class="todo-remove"><i class="fa fa-times"></i></a>
+                                    </div>
+                                </li>
+                                <li class="clearfix">
+                                    <span class="drag-marker">
+                                    <i></i>
+                                    </span>
+                                    <div class="todo-check pull-left">
+                                        <input type="checkbox" value="None" id="todo-check3"/>
+                                        <label for="todo-check3"></label>
+                                    </div>
+                                    <p class="todo-title">
+                                        上传新菜谱
+                                    </p>
+                                    <div class="todo-actionlist pull-right clearfix">
+
+                                        <a href="#" class="todo-remove"><i class="fa fa-times"></i></a>
+                                    </div>
+                                </li>
+                                <li class="clearfix">
+                                    <span class="drag-marker">
+                                    <i></i>
+                                    </span>
+                                    <div class="todo-check pull-left">
+                                        <input type="checkbox" value="None" id="todo-check4"/>
+                                        <label for="todo-check4"></label>
+                                    </div>
+                                    <p class="todo-title">
+                                        宣传
+                                    </p>
+                                    <div class="todo-actionlist pull-right clearfix">
+
+                                        <a href="#" class="todo-remove"><i class="fa fa-times"></i></a>
+                                    </div>
+                                </li>
+
+                            </ul>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form role="form" class="form-inline">
+                                        <div class="form-group todo-entry">
+                                            <input type="text" placeholder="Enter your ToDo List" class="form-control" style="width: 100%">
+                                        </div>
+                                        <button class="btn btn-primary pull-right" type="submit">+</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="panel">
+                            <header class="panel-heading">
+                                用户评论
+                            </header>
+                            <div class="panel-body">
+                                <ul class="goal-progress">
+                                    <% if(commentList.length > 0) {%>
+                                        <% for(var i = 0, len = commentList.length; i < len && i < 4; i ++){ %>
+                                            <li>
+                                                <div class="details">
+                                                    <div class="title">
+                                                        <a href="#"><%= commentList[i].username %></a> <%= commentList[i].time %>
+                                                    </div>
+                                                    <div>
+                                                        <p><%= commentList[i].content %></p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        <% } %>
+                                    <% } %>
+                                </ul>
+                                <!--<div class="text-center"><a href="restaurant/comment">更多</a></div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--body wrapper end-->
+
+        <!--footer section start-->
+        <footer>
+            &copy; Summer Cooperation 2016
+        </footer>
+        <!--footer section end-->
+
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/js_business/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="js/js_business/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/js_business/modernizr.min.js"></script>
+<script src="js/js_business/jquery.nicescroll.js"></script>
+
+<!--easy pie chart-->
+<script src="js/js_business/easypiechart/jquery.easypiechart.js"></script>
+<script src="js/js_business/easypiechart/easypiechart-init.js"></script>
+
+<!--Sparkline Chart-->
+<script src="js/js_business/sparkline/jquery.sparkline.js"></script>
+<script src="js/js_business/sparkline/sparkline-init.js"></script>
+
+<!--icheck -->
+<script src="js/js_business/iCheck/jquery.icheck.js"></script>
+<script src="js/js_business/iCheck/icheck-init.js"></script>
+
+<!-- jQuery Flot Chart-->
+<script src="js/js_business/flot-chart/jquery.flot.js"></script>
+<script src="js/js_business/flot-chart/jquery.flot.tooltip.js"></script>
+<script src="js/js_business/flot-chart/jquery.flot.resize.js"></script>
+
+
+<!--Morris Chart-->
+<script src="js/js_business/morris-chart/morris.js"></script>
+<script src="js/js_business/morris-chart/raphael-min.js"></script>
+
+<!--Calendar-->
+<script src="js/js_business/calendar/clndr.js"></script>
+<script src="js/js_business/calendar/evnt.calendar.init.js"></script>
+<script src="js/js_business/calendar/moment-2.2.1.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+
+<!--common scripts for all pages-->
+<script src="js/js_business/scripts.js"></script>
+
+<!--Dashboard Charts-->
+<script src="js/js_business/dashboard-chart-init.js"></script>
+
+
+</body>
+</html>

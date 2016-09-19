@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>食友商家-菜单列表</title>
+
+    <!--data table-->
+    <link rel="stylesheet" href="css/css_business/data_tables/DT_bootstrap.css" />
+
+    <link href="css/style-business.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+            <a href="/restaurant/main"><img src="images/business/logo.png" alt=""></a>
+        </div>
+        <!--logo and iconic logo end-->
+
+        <div class="left-side-inner">
+            <!--sidebar nav start-->
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li class="active"><a href="/restaurant/main"><img src="images/icon/home.jpg" alt="" /> <span>主页</span></a></li>
+                <li class="menu-list"><a href=""><img src="images/icon/shangjia.jpg" alt="" /> <span>商家信息</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="/restaurant/detail">查看详情</a></li>
+                        <li><a href="/restaurant/modify">管理信息</a></li>
+                    </ul>
+                </li>
+                <li class="menu-list"><a href=""><img src="images/icon/recipe.jpg" alt="" /><span>菜谱信息</span></a>
+                    <ul class="sub-menu-list">
+                        <!--<li><a href="/restaurant/recipeDisplay">菜品展示</a></li>-->
+                        <li><a href="/restaurant/recipeList">菜谱列表</a></li>
+                        <li><a href="/restaurant/upload">上传菜品</a></li>
+                    </ul>
+                </li>
+                <li class="active"><a href="/restaurant/comment"><img src="images/icon/comment.jpg" alt="" /> <span>评论</span></a></li>
+                <li><a href="/restaurant/logout"><img src="images/icon/signout.jpg" alt="" /> <span>Sign Out</span></a></li>
+            </ul>
+            <!--sidebar nav end-->
+        </div>
+    </div>
+    <!-- left side end-->
+
+    <!-- main content start-->
+    <div class="main-content" >
+
+        <!-- header section start-->
+        <div class="header-section">
+
+            <!--toggle button start-->
+            <a class="toggle-btn"><img src="images/icon/switch.jpg" alt="" /></a>
+            <!--toggle button end-->
+
+            <!--search start-->
+            <form class="searchform" action="" method="post">
+                <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
+            </form>
+            <!--search end-->
+
+            <!--notification menu start -->
+            <div class="menu-right">
+                <ul class="notification-menu">
+                    <li>
+                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <img src="images/clients/avatar-5.jpg" alt="" />
+                            迹部景吾
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                            <li><a href="/restaurant/detail"><img src="images/icon/me.jpg" alt="" />查看个人信息</a></li>
+                            <li><a href="/restaurant/modify"><img src="images/icon/settings.jpg" alt="" />个人信息管理</a></li>
+                            <li><a href="/restaurant/logout"><img src="images/icon/signoutme.jpg" alt="" />Log Out</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <!--notification menu end -->
+
+        </div>
+        <!-- header section end-->
+
+        <!-- page heading start-->
+        <div class="page-heading">
+            <h3>
+                菜品
+            </h3>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li class="active"><a href="business_recipedisplay.html">菜品展示</a></li>
+                <li class="active"><a href="business_recipelist.html">菜品列表</a></li>
+            </ul>
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            菜品列表
+                        </header>
+                        <div class="panel-body">
+                            <div class="adv-table editable-table ">
+                                <div class="space15"></div>
+                                <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                                    <thead>
+                                    <tr>
+                                        <th>序号</th>
+                                        <th>菜品名称</th>
+                                        <th>菜品口味</th>
+                                        <th>菜品价格</th>
+                                        <th>推荐菜</th>
+                                        <th>修改菜谱</th>
+                                        <th>删除菜谱</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <% if(rows.length > 0){ %>
+                                        <% for(var i = 0, len = rows.length; i < len; i ++){%>
+                                            <% var recommend; %>
+                                            <% if(rows[i].isRecommend == 1)
+                                                    recommend = '是';
+                                                else
+                                                    recommend = '否';  %>
+
+                                            <tr class="">
+                                                <td><%= (i+1) %></td>
+                                                <td><a href="/restaurant/recipeDetails?id=<%= rows[i].id %>" target="_blank"><%= rows[i].name %></a></td>
+                                                <td><%= rows[i].flavour %></td>
+                                                <td><%= rows[i].price %></td>
+                                                <td><%= recommend %></td>
+                                                <td><button type="button"  style="width:50px;height:25px;border-color:#53868B;border-radius:15px;"><a href ="/restaurant/modifyRecipe?id=<%= rows[i].id %>">修改</a></button></td>
+                                                <td><button type="button"  style="width:50px;height:25px;border-color:#53868B;border-radius:15px;" onclick=del(<%= rows[i].id %>) >删除</button></td>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!--body wrapper end-->
+
+        <!--footer section start-->
+        <footer>
+            &copy; Summer Cooperation 2016
+        </footer>
+        <!--footer section end-->
+
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/js_business/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="js/js_business/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/js_business/modernizr.min.js"></script>
+<script src="js/js_business/jquery.nicescroll.js"></script>
+
+<!--data table-->
+<script type="text/javascript" src="js/js_business/data_tables/jquery.dataTables.js"></script>
+<script type="text/javascript" src="js/js_business/data_tables/DT_bootstrap.js"></script>
+
+<!--common scripts for all pages-->
+<script src="js/js_business/scripts.js"></script>
+
+<!--script for editable table-->
+<script src="js/js_business/data_tables/editable-table.js"></script>
+
+<!-- END JAVASCRIPTS -->
+<script>
+    jQuery(document).ready(function() {
+        EditableTable.init();
+    });
+</script>
+
+<script>
+    function del(id){
+//        alert('del ' + id);
+
+        $.ajax({
+            url: 'delete',
+            data: JSON.stringify({ 'id' : id}),
+            type: "post",
+            contentType: "application/json",
+            cache: false,
+            success: function (data) {
+                alert(data);
+                window.location.reload();  // 刷新页面
+            },
+            error: function (data) {
+                alert(data);
+                window.location.reload();  // 刷新页面
+            }
+        });
+
+    }
+
+</script>
+
+</body>
+</html>

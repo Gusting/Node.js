@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<head>
+    <title>Create Account</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/register/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+    <link href="css/register/templatemo_style.css" rel="stylesheet" type="text/css">
+
+    <style>
+        body {
+            padding: 20px;
+            background-image: url(images/bg.jpg);
+            background-size:100%;
+        }
+    </style>
+</head>
+<body class="templatemo-bg-gray">
+
+
+<div style="text-align:center;>
+		<a href= "index.html"><img src="images/logo.png" alt=""/></a>
+</div>
+<h1 class="margin-bottom-15">Sign Up</h1>
+<div class="container">
+    <div class="col-md-12">
+        <div class = "form-horizontal templatemo-create-account templatemo-container">
+            <div class="form-inner">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <p>*用户名</p>
+                        <input type="text" class="form-control" id="username" placeholder="">
+                    </div>
+                    <div class="col-md-6">
+                        <p>*密码</p>
+                        <input type="password" class="form-control" id="password" placeholder="">
+                    </div>
+                    <div class="col-md-6">
+                        <p>*确认密码</p>
+                        <input type="password" class="form-control" id="password_confirm" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <p>Email</p>
+                        <input type="email" class="form-control" id="email" placeholder="">
+                    </div>
+                    <div class="col-md-6">
+                        <p>联系电话</p>
+                        <input type="text" class="form-control" id="telephone" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <p>*商家名称</p>
+                        <input type="text" class="form-control" id="restaurant" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <p>餐厅简介</p>
+                        <input type="text" class="form-control" id="introduction" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <p>法人姓名</p>
+                        <input type="text" class="form-control" id="manager_name" placeholder="">
+                    </div>
+                    <div class="col-md-6">
+                        <p>身份证号码</p>
+                        <input type="text" class="form-control" id="id_num" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <p>地址</p>
+                        <input type="text" class="form-control" id="address" placeholder="">
+                    </div>
+                    <div class="col-md-6">
+                        <p>营业时间</p>
+                        <input type="text" class="form-control" id="business_hours" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <p>地域</p>
+                        <div style="clear:both;"></div>
+                        <p style="float:left;">
+                            <select id="s1">
+                                <option value="- please select your options -"> - 请选择省 -</option>
+                                <option value="1">北京</option>
+                            </select>
+                        </p>
+                        <p style="float:left;">
+                            <select id="s1">
+                                <option value="- please select your options -"> - 请选择市 -</option>
+                                <option value="1">北京</option>
+                            </select>
+                        </p>
+                        <p style="float:left;">
+                            <select id="s1">
+                                <option value="- please select your options -"> - 请选择区/县 -</option>
+                                <option value="1">朝阳区</option>
+                                <option value="2">海淀区</option>
+                                <option value="3">丰台区</option>
+                                <option value="4">西城区</option>
+                                <option value="5">东城区</option>
+                                <option value="6">昌平区</option>
+                                <option value="7">石景山区</option>
+                                <option value="8">通州区</option>
+                                <option value="9">大兴区</option>
+                                <option value="10">顺义区</option>
+                                <option value="11">房山区</option>
+                                <option value="12">密云县</option>
+                                <option value="13">怀柔区</option>
+                                <option value="14">延庆县</option>
+                                <option value="15">平谷区</option>
+                                <option value="16">门头沟</option>
+                            </select>
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <p>标签</p>
+                        <label><input name="sellerlabel" type="checkbox" value="" />甜点饮品</label>
+                        <label><input name="sellerlabel" type="checkbox" value="" />火锅</label>
+                        <label><input name="sellerlabel" type="checkbox" value="" />自助餐</label>
+                        <label><input name="sellerlabel" type="checkbox" value="" />小吃快餐</label>
+                        <label><input name="sellerlabel" type="checkbox" value="" />东北菜</label>
+                        <label><input name="sellerlabel" type="checkbox" value="" />川湘菜</label>
+                        <label><input name="sellerlabel" type="checkbox" value="" />西餐</label>
+                        <label><input name="sellerlabel" type="checkbox" value="" />日韩料理</label>
+                        <label><input name="sellerlabel" type="checkbox" value="" />烧烤烤肉</label>
+                        <label><input name="sellerlabel" type="checkbox" value="" />汤粥</label>
+                        <label><input name="sellerlabel" type="checkbox" value="" />粤港菜</label>
+                        <label><input name="sellerlabel" type="checkbox" value="" />香锅烤鱼</label>
+                        <label><input name="sellerlabel" type="checkbox" value="" />西北菜</label>
+                        <label><input name="sellerlabel" type="checkbox" value="" />云贵菜</label>
+                        <label><input name="sellerlabel" type="checkbox" value="" />海鲜</label>
+                        <label><input name="sellerlabel" type="checkbox" value="" />咖啡酒吧茶馆</label>
+                        <label><input name="sellerlabel" type="checkbox" value="" />京菜鲁菜</label>
+                        <label><input name="sellerlabel" type="checkbox" value="" />素食</label>
+                        <label><input name="sellerlabel" type="checkbox" value="" />江浙菜</label>
+                        <label><input name="sellerlabel" type="checkbox" value="" />东南亚菜</label>
+                        <label><input name="sellerlabel" type="checkbox" value="" />新疆菜</label>
+                        <label><input name="sellerlabel" type="checkbox" value="" />其他美食</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label><input type="checkbox" id ="privacy">I agree to the <a href="javascript:;" data-toggle="modal" data-target="#templatemo_modal">Terms of Service</a> and <a href="#">Privacy Policy.</a></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input type="submit" id="reg_btn" value="Sign Up" class="btn btn-info" >
+                        <a href="user_login.html" input type="button" class="pull-right">Already have an account.Sign In</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="templatemo_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Terms of Service</h4>
+            </div>
+            <div class="modal-body">
+                <p>欢迎注册食友商家。</p>
+                <p>O(∩_∩)O哈哈~</p>
+                <p>o(￣ヘ￣o#)╭(╯^╰)╮</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="copy" style = "text-align:center">
+    <p>&copy; Summer Cooperation 2016</p>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script>
+
+    // 注册
+    $("#reg_btn").click(function() {
+
+        var username = $("#username").val();
+        var password = $("#password").val();
+        var repwd = $("#password_confirm").val();
+        var email = $("#email").val();
+        var telephone = $("#telephone").val();
+        var restaurant_name = $("#restaurant").val();
+        var introduction = $("#introduction").val();
+        var manager_name = $("#manager_name").val();
+        var id_num = $("#id_num").val();
+        var address = $("#address").val();
+        var business_hours = $("#business_hours").val();
+
+        // 检查非空
+        if(username == "" || password == "" || repwd == "" || restaurant_name == ""){
+            alert("请输入必填项！");
+            return false;
+        }
+        // 检查输入是否合理
+        if(password != repwd){
+            alert("密码与确认密码不一致！");
+            return false;
+        }
+        // 勾选privacylicense
+        if ($("#privacy").is(":checked")){}
+        else{
+            alert("Privacy Policy！");
+            return false;
+        }
+
+        // 获取标签
+        var arr = new Array();
+        $('input[name="sellerlabel"]').each(function(){
+            if(this.checked)
+                    arr.push(1);//向数组中添加元素
+            else
+                    arr.push(0);//向数组中添加元素
+        });
+
+//        var x;
+//        for (x in arr)
+//            alert(arr[x]);
+
+        alert("username:" + username + " " + password);
+
+//        $.post(
+//            'register',
+//            {
+//                username : username,
+//                password : password
+//            },
+//            function(data)
+//            {alert("hello")}
+//        );
+        $.ajax({
+            url: 'register',
+            data: JSON.stringify({ 'username' : username, 'password' : password, 'email' : email, 'telephone' : telephone,
+                'restaurant_name' : restaurant_name, 'manager_name' : manager_name, 'id_num' : id_num, 'address' : address,
+                'business_hours' : business_hours, 'introduction' : introduction, 'arr' : arr}),
+            type: "post",
+            contentType: "application/json",
+            cache: false,
+            success: function (data) {
+                if(data == "true" ){
+                    alert("注册成功！");
+                    window.location.reload();  // 刷新页面
+                }else{
+                    alert("注册失败！");
+                }
+            },
+            error: function (data) {
+                alert(data);
+            }
+        });
+    });
+
+</script>
+
+</body>
+</html>

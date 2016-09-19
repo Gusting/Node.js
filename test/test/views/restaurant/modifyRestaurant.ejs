@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>商家信息管理</title>
+
+    <link href="css/style-business.css" rel="stylesheet">
+    <link href="css/css_business/upload/jquery.stepy.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/css_business/upload/bootstrap-fileupload.min.css" />
+
+    <!--multi-select-->
+    <link rel="stylesheet" type="text/css" href="css/css_business/jquery-multi-select/multi-select.css" />
+
+    <link href="css/css_business/iCheck/square/square.css" rel="stylesheet">
+    <link href="css/css_business/iCheck/square/red.css" rel="stylesheet">
+    <link href="css/css_business/iCheck/square/green.css" rel="stylesheet">
+    <link href="css/css_business/iCheck/square/blue.css" rel="stylesheet">
+    <link href="css/css_business/iCheck/square/yellow.css" rel="stylesheet">
+    <link href="css/css_business/iCheck/square/purple.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+            <a href="/restaurant/main"><img src="images/business/logo.png" alt=""></a>
+        </div>
+        <!--logo and iconic logo end-->
+
+        <div class="left-side-inner">
+            <!--sidebar nav start-->
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li class="active"><a href="/restaurant/main"><img src="images/icon/home.jpg" alt="" /> <span>主页</span></a></li>
+                <li class="menu-list"><a href=""><img src="images/icon/shangjia.jpg" alt="" /> <span>商家信息</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="/restaurant/detail">查看详情</a></li>
+                        <li><a href="/restaurant/modify">管理信息</a></li>
+                    </ul>
+                </li>
+                <li class="menu-list"><a href=""><img src="images/icon/recipe.jpg" alt="" /><span>菜谱信息</span></a>
+                    <ul class="sub-menu-list">
+                        <!--<li><a href="/restaurant/recipeDisplay">菜品展示</a></li>-->
+                        <li><a href="/restaurant/recipeList">菜谱列表</a></li>
+                        <li><a href="/restaurant/upload">上传菜品</a></li>
+                    </ul>
+                </li>
+                <li class="active"><a href="/restaurant/comment"><img src="images/icon/comment.jpg" alt="" /> <span>评论</span></a></li>
+                <li><a href="/restaurant/logout"><img src="images/icon/signout.jpg" alt="" /> <span>Sign Out</span></a></li>
+            </ul>
+            <!--sidebar nav end-->
+        </div>
+    </div>
+    <!-- left side end-->
+
+    <!-- main content start-->
+    <div class="main-content" >
+
+        <!-- header section start-->
+        <div class="header-section">
+
+            <!--toggle button start-->
+            <a class="toggle-btn"><img src="images/icon/switch.jpg" alt="" /></a>
+            <!--toggle button end-->
+
+            <!--search start-->
+            <form class="searchform" action="" method="post">
+                <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
+            </form>
+            <!--search end-->
+
+            <!--notification menu start -->
+            <div class="menu-right">
+                <ul class="notification-menu">
+                    <li>
+                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <img src="images/clients/avatar-5.jpg" alt="" />
+                            迹部景吾
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                            <li><a href="/restaurant/detail"><img src="images/icon/me.jpg" alt="" />查看个人信息</a></li>
+                            <li><a href="/restaurant/modify"><img src="images/icon/settings.jpg" alt="" />个人信息管理</a></li>
+                            <li><a href="/restaurant/logout"><img src="images/icon/signoutme.jpg" alt="" />Log Out</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <!--notification menu end -->
+
+        </div>
+        <!-- header section end-->
+
+        <!-- page heading start-->
+        <div class="page-heading">
+            <h3>
+                商家信息管理
+            </h3>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="#">商家信息管理</a>
+                </li>
+                <li class="active">商家信息维护</li>
+            </ul>
+        </div>
+        <!-- page heading end-->
+        <hr/>
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="square-widget">
+                        <div class="widget-container">
+                            <div class="stepy-tab"></div>
+                            <div id = "default" class="form-horizontal">
+                            <!--<form id="default" class="form-horizontal">-->
+                                <fieldset title="Step 1">
+                                    <legend>上传头像</legend>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-sm-2 control-label">上传头像</label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="form-group last">
+
+                                                <div class="col-md-9">
+                                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
+                                                        </div>
+                                                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                                        <div>
+																	   <span class="btn btn-default btn-file">
+																	   <span class="fileupload-new"><i class="fa fa-paper-clip"></i>选择图片</span>
+																	   <span class="fileupload-exists"><i class="fa fa-undo"></i>改变图片</span>
+																	   <input type="file" class="default" />
+																	   </span>
+                                                            <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i>移除</a>
+                                                        </div>
+                                                    </div>
+                                                    <br/>
+                                                    <span class="label label-danger ">NOTE!</span>
+																 <span>
+																 附加的图像缩略图只支持Firefox, Chrome, Opera, Safari和IE 10。
+																 </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset title="Step 2">
+                                    <legend>基本信息</legend>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-sm-2 control-label">商家名称</label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input class="form-control" id = "name" name="name" type="text" value ="<%= rows[0].res_name %>"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-sm-2 control-label">商家简介</label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <textarea rows="5" cols="60" class="form-control" id="introduction"><%= rows[0].introduction %></textarea>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset title="Step 3">
+                                    <legend>个人信息</legend>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-sm-2 control-label">法人姓名</label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input type="text" value="<%= rows[0].manager_name %>" class="form-control" id="manager_name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-sm-2 control-label">身份证号</label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input type="text" value="<%= rows[0].manager_idnum %>" class="form-control" id="idnum">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-sm-2 control-label">联系电话</label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input type="text" value="<%= rows[0].phone %>" class="form-control" id="phone">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-sm-2 control-label">邮箱地址</label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input type="text" value="<%= rows[0].email %>" class="form-control" id="email">
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset title="Step 4">
+                                    <legend>商家信息</legend>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-sm-2 control-label">地址</label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input type="text" value="<%= rows[0].address %>" class="form-control" id="address">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-sm-2 control-label">营业时间</label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input type="text" value="<%= rows[0].business_hour %>" class="form-control" id="business_hour">
+                                        </div>
+                                    </div>
+
+                                    <!--<div class="form-group">-->
+                                        <!--<label class="col-md-2 col-sm-2 control-label">标签</label>-->
+                                        <!--<div class="col-md-9">-->
+                                            <!--<select name="country" class="multi-select" multiple="" id="my_multi_select3">-->
+                                                <!--<option value="0">甜点饮品</option>-->
+                                                <!--<option value="1">火锅</option>-->
+                                                <!--<option value="2">自助餐</option>-->
+                                                <!--<option value="3">小吃快餐</option>-->
+                                                <!--<option value="4">东北菜</option>-->
+                                                <!--<option value="5">川湘菜</option>-->
+                                                <!--<option value="6">西餐</option>-->
+                                                <!--<option value="7">日韩料理</option>-->
+                                                <!--<option value="8">烧烤烤肉</option>-->
+                                                <!--<option value="9">汤粥</option>-->
+                                                <!--<option value="10">粤港菜</option>-->
+                                                <!--<option value="11">香锅烤鱼</option>-->
+                                                <!--<option value="12">西北菜</option>-->
+                                                <!--<option value="13">云贵菜</option>-->
+                                                <!--<option value="14">海鲜</option>-->
+                                                <!--<option value="15">咖啡酒吧茶馆</option>-->
+                                                <!--<option value="16">京菜鲁菜</option>-->
+                                                <!--<option value="17">素食</option>-->
+                                                <!--<option value="18">江浙菜</option>-->
+                                                <!--<option value="19">东南亚菜</option>-->
+                                                <!--<option value="20">新疆菜</option>-->
+                                                <!--<option value="21">其他美食</option>-->
+                                            <!--</select>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                </fieldset>
+                                <fieldset title="Step 5">
+                                    <legend>上传图片</legend>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-sm-2 control-label">上传图片</label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="form-group last">
+                                                <div class="col-md-9">
+                                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
+                                                        </div>
+                                                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                                        <div>
+																	   <span class="btn btn-default btn-file">
+																	   <span class="fileupload-new"><i class="fa fa-paper-clip"></i>选择图片</span>
+																	   <span class="fileupload-exists"><i class="fa fa-undo"></i>改变图片</span>
+																	   <input type="file" class="default" />
+																	   </span>
+                                                            <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i>移除</a>
+                                                        </div>
+                                                    </div>
+                                                    <br/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group last">
+
+                                                <div class="col-md-9">
+                                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
+                                                        </div>
+                                                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                                        <div>
+																	   <span class="btn btn-default btn-file">
+																	   <span class="fileupload-new"><i class="fa fa-paper-clip"></i>选择图片</span>
+																	   <span class="fileupload-exists"><i class="fa fa-undo"></i>改变图片</span>
+																	   <input type="file" class="default" />
+																	   </span>
+                                                            <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash"></i>移除</a>
+                                                        </div>
+                                                    </div>
+                                                    <br/>
+                                                    <span class="label label-danger ">NOTE!</span>
+																 <span>
+																 附加的图像缩略图只支持Firefox, Chrome, Opera, Safari和IE 10。
+																 </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <button class="btn btn-info finish" id="submit_btn">提交</button>
+                            <!--</form>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--body wrapper end-->
+        <!--footer section start-->
+
+        <footer class="sticky-footer">
+            &copy; Summer Cooperation 2016
+        </footer>
+        <!--footer section end-->
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/js_business/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="js/js_business/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/js_business/upload/jquery.validate.min.js"></script>
+<script src="js/js_business/upload/jquery.stepy.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/js_business/modernizr.min.js"></script>
+<script src="js/js_business/jquery.nicescroll.js"></script>
+<script type="text/javascript" src="js/js_business/upload/bootstrap-fileupload.min.js"></script>
+
+<!--multi-select-->
+<script type="text/javascript" src="js/js_business/jquery-multi-select/jquery.multi-select.js"></script>
+<script type="text/javascript" src="js/js_business/jquery-multi-select/jquery.quicksearch.js"></script>
+<script src="js/js_business/jquery-multi-select/multi-select-init.js"></script>
+
+<!--icheck -->
+<script src="js/js_business/iCheck/jquery.icheck.js"></script>
+<script src="js/js_business/iCheck/icheck-init.js"></script>
+
+<!--picker-->
+<script src="js/js_business/picker/distpicker.data.js"></script>
+<script src="js/js_business/picker/distpicker.js"></script>
+<script src="js/js_business/picker/main.js"></script>
+
+<!--common scripts for all pages-->
+<script src="js/js_business/scripts.js"></script>
+
+<script>
+    /*=====STEPY WIZARD====*/
+    $(function() {
+        $('#default').stepy({
+            backLabel: 'Previous',
+            block: true,
+            nextLabel: 'Next',
+            titleClick: true,
+            titleTarget: '.stepy-tab'
+        });
+    });
+    /*=====STEPY WIZARD WITH VALIDATION====*/
+    $(function() {
+        $('#stepy_form').stepy({
+            backLabel: 'Back',
+            nextLabel: 'Next',
+            errorImage: true,
+            block: true,
+            description: true,
+            legend: false,
+            titleClick: true,
+            titleTarget: '#top_tabby',
+            validate: true
+        });
+        $('#stepy_form').validate({
+            errorPlacement: function(error, element) {
+                $('#stepy_form div.stepy-error').append(error);
+            },
+            rules: {
+                'name': 'required',
+                'email': 'required'
+            },
+            messages: {
+                'name': {
+                    required: 'Name field is required!'
+                },
+                'email': {
+                    required: 'Email field is requerid!'
+                }
+            }
+        });
+    });
+</script>
+
+<script>
+    $("#submit_btn").click(function(){
+
+        var res_name = $("#name").val();
+        var introduction = $("#introduction").val();
+        var manager_name = $("#manager_name").val();
+        var manager_idnum = $("#idnum").val();
+        var phone = $("#phone").val();
+        var email = $("#email").val();
+        var address = $("#address").val();
+        var business_hour = $("#business_hour").val();
+
+        $.post(
+                'modify',
+                {'res_name' : res_name,
+                 'introduction' : introduction,
+                 'manager_name' : manager_name,
+                 'manager_idnum' :manager_idnum,
+                 'phone' : phone,
+                 'email' : email,
+                 'address' : address,
+                 'business_hour' : business_hour},
+                function(data){
+                    alert(data);
+
+                    window.location.reload();
+                }
+
+        );
+
+    });
+
+</script>
+
+</body>
+</html>

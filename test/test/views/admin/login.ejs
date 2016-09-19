@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>sign in</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Modern Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <!-- Custom CSS -->
+    <link href="css/style-administrator.css" rel='stylesheet' type='text/css' />
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="js/js-administrator/jquery.min.js"></script>
+    <!----webfonts--->
+    <link href="css/useso.css" rel='stylesheet' type='text/css'>
+    <!---//webfonts--->
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body id="login">
+<div class="login-logo">
+    <a href="index.html"><img src="images/logo.png" alt=""/></a>
+</div>
+<h2 class="form-heading">sign in</h2>
+<div class="app-cam">
+    <!--<form>-->
+        <input type="text" id="username" class="text" value="用户名" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '用户名';}">
+        <input type="password" id="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+        <div class="submit"><input type="submit" id="submit_btn" value="Login"></div>
+        <ul class="new">
+            <li class="new_right"><p class="sign">New here ?<a href="/register"> Sign Up</a></p></li>
+        </ul>
+    <!--</form>-->
+</div>
+<div class="copy_layout login">
+    <p>&copy; Summer Cooperation 2016</p>
+</div>
+
+<<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script>
+
+    $("#submit_btn").click(function(){
+        var username = $("#username").val();
+        var password = $("#password").val();
+
+        $.post(
+                'login',
+                { 'username' : username, 'password' : password },
+                function(data){
+                    if (typeof data.redirect == 'string')
+                        window.location = data.redirect;
+                    else
+                            alert(data);
+                }
+        );
+
+//        $.ajax({
+//            url:'login',
+//            type:'post',
+//            data: JSON.stringify({ 'username' : username, 'password' : password }),
+//            contentType: "application/json",
+//            cache: false,
+//            success: function(data){
+//                alert(data);
+//            },
+//            error: function(data){
+//                alert(data);
+//            }
+//        });
+    });
+</script>
+
+</body>
+</html>
+
+
